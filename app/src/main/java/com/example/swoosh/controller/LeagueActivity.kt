@@ -1,10 +1,9 @@
-package com.example.swoosh
+package com.example.swoosh.controller
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
+import com.example.swoosh.utilities.EXTRA_LEAGUE
 import com.example.swoosh.databinding.ActivityLeagueBinding
 
 class LeagueActivity : BaseActivity() {
@@ -22,18 +21,13 @@ class LeagueActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.mensLeagueBttn.setOnClickListener {
-            onMensClicked()
-        }
-        binding.womensLeagueBttn.setOnClickListener {
-            onWomensClicked()
-        }
-        binding.coedLeagueBttn.setOnClickListener {
-            onCoedClicked()
-        }
+        binding.leagueNextBtn.setOnClickListener { leagueNextClicked() }
+        binding.mensLeagueBttn.setOnClickListener { onMensClicked() }
+        binding.womensLeagueBttn.setOnClickListener { onWomensClicked() }
+        binding.coedLeagueBttn.setOnClickListener { onCoedClicked() }
     }
 
-    fun leagueNextClicked(view: View) {
+    private fun leagueNextClicked() {
         if (selectedLeague != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
             skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
@@ -43,21 +37,21 @@ class LeagueActivity : BaseActivity() {
         }
     }
 
-    fun onMensClicked() {
+    private fun onMensClicked() {
         binding.womensLeagueBttn.isChecked = false
         binding.coedLeagueBttn.isChecked = false
 
         selectedLeague = "mens"
     }
 
-    fun onWomensClicked() {
+    private fun onWomensClicked() {
         binding.mensLeagueBttn.isChecked = false
         binding.coedLeagueBttn.isChecked = false
 
         selectedLeague = "womens"
     }
 
-    fun onCoedClicked() {
+    private fun onCoedClicked() {
         binding.mensLeagueBttn.isChecked = false
         binding.womensLeagueBttn.isChecked = false
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LeagueActivity">
+    tools:context=".controller.LeagueActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -61,7 +61,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/swoosh_toggle"
-            android:onClick="onMensClicked"
             android:text="@string/mens"
             android:textColor="@color/white"
             android:textOff="@string/mens"
@@ -74,7 +73,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/swoosh_toggle"
-            android:onClick="onWomensClicked"
             android:text="@string/womens"
             android:textColor="@color/white"
             android:textOff="@string/womens"
@@ -85,7 +83,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/swoosh_toggle"
-            android:onClick="onCoedClicked"
             android:text="@string/co_ed"
             android:textColor="@color/white"
             android:textOff="@string/co_ed"
@@ -101,7 +98,6 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
-        android:onClick="leagueNextClicked"
         android:text="@string/next"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
