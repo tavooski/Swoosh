@@ -14,7 +14,6 @@ class MainActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-        // val getStartedBtn: Button = findViewById(R.id.getStartedBtn)
         binding.getStartedBtn.setOnClickListener {
             val leagueIntent = Intent(this, LeagueActivity::class.java)
             startActivity(leagueIntent)

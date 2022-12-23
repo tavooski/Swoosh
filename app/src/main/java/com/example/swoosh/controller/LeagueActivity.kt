@@ -3,17 +3,15 @@ package com.example.swoosh.controller
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.example.swoosh.utilities.EXTRA_LEAGUE
 import com.example.swoosh.databinding.ActivityLeagueBinding
+import com.example.swoosh.model.Player
+import com.example.swoosh.utilities.EXTRA_PLAYER
 
 class LeagueActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLeagueBinding
 
-    private var selectedLeague = ""
-    //private val mensLeagueBttn: Button = findViewById(R.id.mensLeagueBttn)
-    //private val womensLeagueBttn: Button = findViewById(R.id.womensLeagueBttn)
-    //private val coedLeagueBttn: Button = findViewById(R.id.coedLeagueBttn)
+    private var player = Player("","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +26,9 @@ class LeagueActivity : BaseActivity() {
     }
 
     private fun leagueNextClicked() {
-        if (selectedLeague != "") {
+        if (player.league != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
         } else {
             Toast.makeText(this, "Please select a league.", Toast.LENGTH_SHORT).show()
@@ -41,20 +39,20 @@ class LeagueActivity : BaseActivity() {
         binding.womensLeagueBttn.isChecked = false
         binding.coedLeagueBttn.isChecked = false
 
-        selectedLeague = "mens"
+        player.league = "mens"
     }
 
     private fun onWomensClicked() {
         binding.mensLeagueBttn.isChecked = false
         binding.coedLeagueBttn.isChecked = false
 
-        selectedLeague = "womens"
+        player.league = "womens"
     }
 
     private fun onCoedClicked() {
         binding.mensLeagueBttn.isChecked = false
         binding.womensLeagueBttn.isChecked = false
 
-        selectedLeague = "co-ed"
+        player.league = "co-ed"
     }
 }

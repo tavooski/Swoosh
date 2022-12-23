@@ -1,9 +1,9 @@
 package com.example.swoosh.controller
 
 import android.os.Bundle
-import com.example.swoosh.utilities.EXTRA_LEAGUE
-import com.example.swoosh.utilities.EXTRA_SKILL
 import com.example.swoosh.databinding.ActivityFinishBinding
+import com.example.swoosh.model.Player
+import com.example.swoosh.utilities.EXTRA_PLAYER
 
 class FinishActivity : BaseActivity() {
 
@@ -15,9 +15,8 @@ class FinishActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
-        binding.searchLeaguesText.text = "Looking for $league $skill league near you..."
+        binding.searchLeaguesText.text = "Looking for ${player?.league} ${player?.skill} league near you..."
     }
 }
