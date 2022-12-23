@@ -13,35 +13,35 @@
         android:theme="@style/Theme.Swoosh"
         tools:targetApi="31">
         <activity
-            android:name=".controller.FinishActivity"
+            android:name="com.example.swoosh.controller.FinishActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".controller.SkillActivity"
+            android:name="com.example.swoosh.controller.SkillActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".controller.BaseActivity"
+            android:name="com.example.swoosh.controller.BaseActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".controller.LeagueActivity"
+            android:name="com.example.swoosh.controller.LeagueActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".controller.MainActivity"
+            android:name="com.example.swoosh.controller.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
